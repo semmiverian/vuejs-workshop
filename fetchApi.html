@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fetch API Vue JS</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="app" class="bg-gray-800 min-h-screen flex justify-center items-start">
+      <div class="bg-gray-600 px-4 py-4 shadow-lg rounded-md my-6 w-1/2 text-white">
+        <h1 class="text-lg leading-7 tracking-wide mb-2">Vue JS User List</h1>
+        <div class="w-full border border-white mb-4"></div>
+        <div class="mb-4">
+          <label for="findUser" class="block text-sm font-medium">Cari User</label>
+          <div class="mt-1">
+            <input
+              type="text"
+              name="findUser"
+              id="findUser"
+              class="shadow-lg focus:ring-gray-500 focus:border-gray-500 block w-full text-sm border-gray-500 rounded-md px-4 py-2 bg-gray-500"
+              placeholder="Kosasih"
+            />
+          </div>
+        </div>
+        <div>
+          <ul class="divide-y divide-gray-200">
+            <li class="py-4 flex">
+              <img
+                class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                alt=""
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Calvin Hawkins</p>
+                <p class="text-sm text-gray-400">calvin.hawkins@example.com</p>
+              </div>
+            </li>
+
+            <li class="py-4 flex">
+              <img
+                class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                alt=""
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Kristen Ramos</p>
+                <p class="text-sm text-gray-400">kristen.ramos@example.com</p>
+              </div>
+            </li>
+
+            <li class="py-4 flex">
+              <img
+                class="h-10 w-10 rounded-full"
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
+                alt=""
+              />
+              <div class="ml-3">
+                <p class="text-sm font-medium text-white">Ted Fox</p>
+                <p class="text-sm text-gray-400">ted.fox@example.com</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
