@@ -18,6 +18,7 @@
               type="text"
               name="findUser"
               id="findUser"
+              v-model="findUser"
               class="shadow-lg focus:ring-gray-500 focus:border-gray-500 block w-full text-sm border-gray-500 rounded-md px-4 py-2 bg-gray-500"
               placeholder="Kosasih"
             />
@@ -25,39 +26,11 @@
         </div>
         <div>
           <ul class="divide-y divide-gray-200">
-            <li class="py-4 flex">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                alt=""
-              />
+            <li class="py-4 flex" v-for="user in users">
+              <img class="h-10 w-10 rounded-full" v-bind:src="user.picture.medium" alt="" />
               <div class="ml-3">
-                <p class="text-sm font-medium text-white">Calvin Hawkins</p>
-                <p class="text-sm text-gray-400">calvin.hawkins@example.com</p>
-              </div>
-            </li>
-
-            <li class="py-4 flex">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                alt=""
-              />
-              <div class="ml-3">
-                <p class="text-sm font-medium text-white">Kristen Ramos</p>
-                <p class="text-sm text-gray-400">kristen.ramos@example.com</p>
-              </div>
-            </li>
-
-            <li class="py-4 flex">
-              <img
-                class="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                alt=""
-              />
-              <div class="ml-3">
-                <p class="text-sm font-medium text-white">Ted Fox</p>
-                <p class="text-sm text-gray-400">ted.fox@example.com</p>
+                <p class="text-sm font-medium text-white">{{ user.name.first + ' ' + user.name.last }}</p>
+                <p class="text-sm text-gray-400">{{ user.email }}</p>
               </div>
             </li>
           </ul>

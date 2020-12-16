@@ -12,11 +12,19 @@
         <h1 class="text-lg leading-7 tracking-wide mb-2">Vue JS Counter</h1>
         <div class="w-full border border-white mb-4"></div>
         <div class="flex justify-between items-center">
-          <button class="border-gray-500 bg-gray-500 py-1.5 px-4 rounded-md shadow-md" type="submit">
+          <button
+            class="border-gray-500 bg-gray-500 py-1.5 px-4 rounded-md shadow-md"
+            type="button"
+            v-on:click="decrementCounter"
+          >
             Decrement Button
           </button>
           <h2>{{ counter }}</h2>
-          <button class="border-gray-500 bg-gray-500 py-1.5 px-4 rounded-md shadow-md" type="submit">
+          <button
+            class="border-gray-500 bg-gray-500 py-1.5 px-4 rounded-md shadow-md"
+            type="button"
+            v-on:click="incrementCounter"
+          >
             Increment Button
           </button>
         </div>

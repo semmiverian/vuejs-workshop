@@ -12,7 +12,7 @@
         <h1 class="text-lg leading-7 tracking-wide mb-2">Vue JS Todo List</h1>
         <div class="w-full border border-white mb-4"></div>
 
-        <form class="mb-4">
+        <form class="mb-4" v-on:submit.prevent="addTodo">
           <div class="flex items-end space-x-2">
             <div class="flex-1">
               <label for="newTodo" class="block text-sm font-medium">Masukkan todo baru</label>
@@ -21,6 +21,7 @@
                   type="text"
                   name="newTodo"
                   id="newTodo"
+                  v-model="newTodo"
                   class="shadow-lg focus:ring-gray-500 focus:border-gray-500 block w-full text-sm border-gray-500 rounded-md px-4 py-2 bg-gray-500"
                   placeholder="Belajar Vue JS"
                 />
@@ -35,57 +36,12 @@
         </form>
 
         <div class="divide-y divide-gray-100 text-white mb-4">
-          <div class="w-full py-3 flex items-center justify-between">
-            <p>Calvin Hawkins</p>
+          <div class="w-full py-3 flex items-center justify-between" v-for="(todo, index) in todos" v-bind:key="index">
+            <p>{{ todo }}</p>
             <div>
               <div
                 class="rounded-full opacity-50 hover:opacity-100 p-2 h-9 w-9 text-gray-300 hover:bg-red-200 hover:text-red-500 cursor-pointer flex items-center"
-              >
-                <svg
-                  class="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="w-full py-3 flex items-center justify-between">
-            <p>Calvin Hawkins</p>
-            <div>
-              <div
-                class="rounded-full opacity-50 hover:opacity-100 p-2 h-9 w-9 text-gray-300 hover:bg-red-200 hover:text-red-500 cursor-pointer flex items-center"
-              >
-                <svg
-                  class="w-8 h-8"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  ></path>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div class="w-full py-3 flex items-center justify-between">
-            <p>Calvin Hawkins</p>
-            <div>
-              <div
-                class="rounded-full opacity-50 hover:opacity-100 p-2 h-9 w-9 text-gray-300 hover:bg-red-200 hover:text-red-500 cursor-pointer flex items-center"
+                v-on:click="deleteTodo(index)"
               >
                 <svg
                   class="w-8 h-8"
@@ -106,7 +62,7 @@
           </div>
         </div>
 
-        <p class="text-right leading-7 tracking-wide">Sisa tugas: 3</p>
+        <p v-if="todosCount !== 0" class="text-right leading-7 tracking-wide">Sisa tugas: {{ todosCount }}</p>
       </div>
     </div>
 
